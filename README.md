@@ -20,3 +20,6 @@ Several Next Generation Sequencing (NGS) methods produce mitocondrial sequence d
 
 ## Before running 'MitoConsensus.sh'
 Trasfer all individual FASTQ files (i.e., demultiplexed by individual) with raw reads to the same folder.
+
+## Running 'MitoConsensus.sh'
+The first part of the script is a set of varaibles to pass to commands that define paths to files ond folders. Here is the full set of variables:
