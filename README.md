@@ -1,25 +1,25 @@
 # MitoConsensus
-MitoConsensus is a bash script that uses standard bioinformatic tools to obtain mitochondrial consensus sequences from next generation sequencing single-end reads aligned to a reference mitogenome.
+MitoConsensus is a bash script that uses standard bioinformatic tools to obtain mitochondrial consensus sequences from next generation sequencing single-end reads after alignment to a reference mitogenome. The script contains a series of functions that are run in parallel to reduce computation time. 
 
 Several Next Generation Sequencing (NGS) methods produce mitocondrial sequence data, but often that data is ignored. The purpose of this script is to provide a standerdized way to identify mitochondrial sequences from NGS data, when possible. MitoConsensus.sh takes SAM files outputed by bowtie2 (or BAM files) as input and:
 1. Filters mapped reads based on alignment quality and positions based depth of coverage;
 2. Generats mtDNA consensus sequence(s) for each individual;
 3. Filters cosensus sequences based on consensus base quality.
 
-The output of MitoConsensus.sh (i.e., the lenght of mtDNA sequences for each individual) depends greatly on the protocol used and target species. Some protocols are more prone to sequence mitochondrial fragments. MitoConsensus.sh was tested on nextRAD, ddRAD, a PCR free GBS, and Illumina shrot-read WGS (unpublished results). The results are not directly comparable because data was retrieved from different species but more and longer reads were obtained from nextRAD and shrot-read WGS.
+The output of MitoConsensus (i.e., the lenght of mtDNA sequences for each individual) depends greatly on the protocol used and target species. Some protocols are more prone to sequence mitochondrial fragments. MitoConsensus was tested on nextRAD, ddRAD, a PCR free GBS, and Illumina shrot-read WGS (unpublished results). The results are not directly comparable because data was retrieved from different species but more and longer reads were obtained from nextRAD and shrot-read WGS.
 
-## Software needed
+## Tools needed
+- GNU prallel
 - samtools
 - bedtools
 - bcftools
 - trimmomatic
 - seqtk
 
-
 ## Preparing the data
-MitoConsensus.sh only deals with single-end data. Prior to run MitoConsensus.sh demultiplex reads by individual (one FASTQ file per individual), remove adapter and primer sequences as well as low quality bases, and align reads to a reference mitogenome using bowtie2. bowtie2 has to be used to align the reads because MitoConsensus.sh uses bowtie2 specific flag `XS:i` to filter out reads that aligned to the reference multiple times. When using a conspecific mitogenome I recomend to align reads using bowtie2 options `--local` and `--very-sensitive-local`. Finally, all BAM files resulting from bowtie2 should be in the same folder.
+MitoConsensus only deals with single-end data. Prior to run MitoConsensus demultiplex reads by individual (one FASTQ file per individual), remove adapter and primer sequences as well as low quality bases, and align reads to a reference mitogenome using bowtie2. bowtie2 has to be used to align the reads because MitoConsensus uses bowtie2 specific flag `XS:i` to filter out reads that aligned to the reference multiple times. When using a conspecific mitogenome I recomend to align reads using bowtie2 options `--local` and `--very-sensitive-local`. Finally, all BAM files resulting from bowtie2 should be in the same folder.
 
-## Running MitoConsensus.sh
+## Running MitoConsensus
 To facilitate the usage of this bash script, the first part is a set of shell varaibles to control several parameters and the path to the folder with alignment files. Bellow is the full set of variables:
 ~~~
 IF
@@ -64,7 +64,7 @@ T
       [Value used in the script: 1]
 ~~~
   
-MitoConsensus.sh outputs a series of BAM, FASTQ and FASTA files for each individual and a FASTA file including all sequences from all individuals that can be used for alignment and further filtering. Further validation of variable positions, particularly low frequency variants, is strongly recomended.
+MitoConsensus outputs a series of BAM, FASTQ and FASTA files for each individual and a FASTA file including all sequences from all individuals that can be used for alignment and further filtering. Further validation of variable positions, particularly low frequency variants, is strongly recomended.
 
 ## Citation
-Please cite the article where this script was first published: Osborne, Caeiro-Dias, Turner (2024), TITLE, JOURNAL, DOI
+Please cite the article where this script was first published: Osborne MJ, Caeiro-Dias G, Turner T (2024). Mitogenomics of a declining species with boom-bust population dynamics. Submitted for publication. 
