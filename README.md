@@ -48,7 +48,8 @@ TRAILING
       [Value used in the script: 20]
 
 MINLEN
-      Reads with lenght below this value after removing leading and trailing bases will be filtered out. Value to be passed to trimmomatic.
+      Reads with lenght below this value after removing leading and trailing bases will be filtered out.
+      Value to be passed to trimmomatic.
       [Value used in the script: 50]
 
 TRM
