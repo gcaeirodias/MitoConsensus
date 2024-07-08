@@ -9,7 +9,7 @@ Several Next Generation Sequencing (NGS) methods produce mitocondrial sequence d
 The output of MitoConsensus (i.e., the lenght of mtDNA sequences for each individual) depends greatly on the protocol used and target species. Some protocols are more prone to sequence mitochondrial fragments. MitoConsensus was tested on nextRAD, ddRAD, a PCR free GBS, and Illumina shrot-read WGS (unpublished results). The results are not directly comparable because data was retrieved from different species but more and longer reads were obtained from nextRAD and shrot-read WGS.
 
 ## Tools needed
-- GNU prallel
+- GNU parallel
 - samtools
 - bedtools
 - bcftools
