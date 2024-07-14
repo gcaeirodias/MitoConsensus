@@ -1,12 +1,12 @@
 # MitoConsensus
-MitoConsensus is a bash script that uses standard bioinformatic tools to obtain mitochondrial consensus sequences from next generation sequencing single-end reads after alignment to a reference mitogenome. The script contains a series of functions that are run in parallel to reduce computation time. 
+MitoConsensus is a bash script that uses standard bioinformatic tools to obtain mitochondrial consensus sequences from high-throughput reduced representation sequencing methods using single-end sequencing after alignment to a reference mitogenome. 
 
-Several Next Generation Sequencing (NGS) methods produce mitocondrial sequence data, but often that data is ignored. The purpose of this script is to provide a standerdized way to identify mitochondrial sequences from NGS data, when possible. MitoConsensus.sh takes SAM files outputed by bowtie2 (or BAM files) as input and:
-1. Filters mapped reads based on alignment quality and positions based depth of coverage;
+Several high-throughput reduced representation sequencing methods produce mitocondrial sequence data, but often that data is ignored. The purpose of this script is to provide a standerdized way to identify mitochondrial sequences from reduced representation sequencing data, when possible. MitoConsensus takes as input SAM files outputed by bowtie2 or BAM files converted from bowtie2 SAM files:
+1. Filters mapped reads based on alignment quality and position depth of coverage;
 2. Generats mtDNA consensus sequence(s) for each individual;
 3. Filters cosensus sequences based on consensus base quality.
 
-The output of MitoConsensus (i.e., the lenght of mtDNA sequences for each individual) depends greatly on the protocol used and target species. Some protocols are more prone to sequence mitochondrial fragments. MitoConsensus was tested on nextRAD, ddRAD, a PCR free GBS, and Illumina shrot-read WGS (unpublished results). The results are not directly comparable because data was retrieved from different species but more and longer reads were obtained from nextRAD and shrot-read WGS.
+The output of MitoConsensus (i.e., the lenght of mtDNA sequences for each individual) depends greatly on the protocol used and target species. Some protocols are more prone to sequence mitochondrial fragments. MitoConsensus was tested on nextRAD, ddRAD, and a PCR free GBS (unpublished results). The results are not directly comparable because data was retrieved from different species but more and longer reads were obtained from nextRAD.
 
 ## Tools needed
 - GNU parallel
@@ -65,7 +65,7 @@ T
       [Value used in the script: 1]
 ~~~
   
-MitoConsensus outputs a series of BAM, FASTQ and FASTA files for each individual and a FASTA file including all sequences from all individuals that can be used for alignment and further filtering. Further validation of variable positions, particularly low frequency variants, is strongly recomended.
+MitoConsensus outputs a series of BAM, FASTQ and FASTA files for each individual and a combined FASTA file including all sequences from all individuals that can be used for alignment and further filtering. Further validation of variable positions, particularly low frequency variants, is strongly recomended.
 
 ## Citation
 Please cite the article where this script was first published: Osborne MJ, Caeiro-Dias G, Turner T (2024). Mitogenomics of a declining species with boom-bust population dynamics. Submitted for publication. 
