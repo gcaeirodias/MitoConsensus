@@ -12,7 +12,7 @@ TRAILING=20
 MINLEN=50
 Q=20
 P=example_combined_mtDNA
-T=16
+T=1
 TRM=./jar_trimmomatic/trimmomatic-0.39.jar
 
 ######################################
