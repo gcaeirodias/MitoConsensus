@@ -68,4 +68,4 @@ T
 MitoConsensus outputs a series of BAM, FASTQ and FASTA files for each individual and a combined FASTA file including all sequences from all individuals that can be used for alignment and further filtering. Further validation of variable positions, particularly low frequency variants, is strongly recomended.
 
 ## Citation
-Please cite the article where this script was first published: Osborne MJ, Caeiro-Dias G, Turner T (2024). Mitogenomics of a declining species with boom-bust population dynamics. Submitted for publication. 
+Please cite the article where this script was first published: Osborne MJ, Caeiro-Dias G, Turner TF (2024). Mitogenomics of a declining species with boom-bust population dynamics. In review. 
