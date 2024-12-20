@@ -69,7 +69,7 @@ T
 MitoConsensus outputs a series of BAM, FASTQ and FASTA files for each individual and a combined FASTA file including all sequences from all individuals that can be used for alignment and further filtering. Further validation of variable positions, particularly low frequency variants, is strongly recomended.
 
 ## Citation
-Please cite the article where this script was first published: Osborne MJ, Caeiro-Dias G, Turner TF (2024). Mitogenomics of a declining species with boom-bust population dynamics. In review.
+Please cite the article where this script was first published: Osborne MJ, Caeiro-Dias G, Turner TF (2024). Mitogenomics of a declining species, the Rio Grande silvery minnow (Hybognathus amarus), with boom–bust population dynamics. Biological Journal of the Linnean Society, 143(1), blae081(https://doi.org/10.1093/biolinnean/blae081). 
 
 ## Contact
 Send your questions, suggestions, or comments to gcaeirodias@unm.edu
