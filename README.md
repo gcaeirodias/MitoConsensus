@@ -3,7 +3,7 @@ MitoConsensus is a shell script that produces mithocondrial consensus sequences 
 
 Several high-throughput reduced representation sequencing methods produce mitocondrial sequence data, but often that data is ignored. The purpose of this script is to provide a standerdized way to identify mitochondrial sequences from reduced representation sequencing data, when possible. MitoConsensus takes as input SAM files outputed by bowtie2 or BAM files converted from bowtie2 SAM files:
 1. Filters mapped reads based on alignment quality, number of alignments, and position depth of coverage;
-2. Generats mtDNA consensus sequence(s) for each individual;
+2. Generates mtDNA consensus sequence(s) for each individual;
 3. Filters consensus sequences based on consensus base quality.
 
 The output of MitoConsensus (i.e., the lenght of mtDNA sequences for each individual) depends greatly on the protocol used and target species. Some protocols are more prone to sequence mitochondrial fragments. MitoConsensus was tested on nextRAD, ddRAD, and a PCR free GBS (unpublished results). The results are not directly comparable because data was retrieved from different species but more and longer reads were obtained from nextRAD.
