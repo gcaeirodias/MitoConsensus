@@ -130,9 +130,19 @@ for fastq in *_consensus.fastq
     rm ../filt_consensus/${fastq%%.fastq}_trim.fastq ../filt_consensus/${fastq%%.fastq}_4L.fastq
 done
 
+######################################
+## Change consensus sequence names
+######################################
 # Function to modify FASTA headers.
+cd ../filt_consensus
 modify_headers() {
     local fasta=$1
     HEADER=$(head -1 $fasta)
     sed -i "s/$HEADER/>${fasta%%.fasta}_mtDNA/" $fasta
 }
+
+export -f modify_headers
+for fasta in *_5dp_consensus.fasta
+    do
+	modify_headers $fasta
+done
